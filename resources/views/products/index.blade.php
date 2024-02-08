@@ -41,10 +41,7 @@
                                     @php
                                         $averageScore = round($product->reviews->avg('score') * 2) / 2;
                                     @endphp
-                                    <div class="samuraimart-star-rating" data-rate="{{ $averageScore }}">
-                                        <span class="star-rating"></span>
-                                        ({{ number_format($averageScore, 1) }})
-                                    </div>
+                                    <x-star-rating :averageScore="$averageScore" />
                                     <label class="mt-1">￥{{ $product->price }}</label>
                                 </div>
                             </div>
